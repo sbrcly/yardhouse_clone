@@ -1,0 +1,80 @@
+nav {
+    position: relative;
+    width: 100vw;
+    height: 130px;
+    background-color: var(--black);
+    color: var(--white);
+}
+
+#careers-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 10px;
+    margin-right: 20px;
+    font-weight: 700;
+    font-size: .8rem;
+}
+
+#careers-link:hover {
+    color: var(--white);
+    text-shadow: none;
+}
+
+#nav-left {
+    height: 100%;
+}
+
+#logo-container {
+    position: absolute;
+    top: var(--logoTop);
+    left: var(--logoLeft);
+}
+
+#company-logo {
+    height: var(--logoHeight);
+    width: var(--logoWidth);
+    margin-left: 1rem;
+}
+
+#nav-left-links {
+    position: absolute;
+    bottom: var(--logoTop);
+    left: var(--logoWidth);
+    margin-left: 3rem;
+}
+
+#nav-left-links a {
+    margin: 0 1.25rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+#nav-left-links a:hover {
+    color: var(--primary);
+    text-shadow: 0 0 10px white;
+    transition: all .4s;
+}
+
+#nav-right-links {
+    position: absolute;
+    bottom: var(--logoTop);
+    right: 0;
+    margin-right: 20px;
+}
+
+#nav-right-links a {
+    margin-left: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+#nav-right-links a i {
+    font-weight: unset;
+    font-size: 1.5rem;
+}
+
+
+

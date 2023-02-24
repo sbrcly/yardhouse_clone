@@ -1,0 +1,12 @@
+:root {
+    --primary: #a1784c;
+    --white: #fff;
+    --black: #000;
+
+    --font: font-family: 'Lato', sans-serif;
+
+    --logoTop: 25%;
+    --logoLeft: 0;
+    --logoWidth: 258px;
+    --logoHeight: auto;
+}
