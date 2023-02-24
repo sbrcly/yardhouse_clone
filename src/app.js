@@ -2,18 +2,6 @@
 
 // NAV *****
 const nav = document.querySelector('nav');
-
-// NAV LEFT **
-const navLeft = document.querySelector('#nav-left');
-const logoContainer = document.querySelector('#logo-container');
-const logo = document.querySelector('#company-logo');
-const navLeftLinksContainer = document.querySelector('#nav-left-links');
-
-// NAV RIGHT **
-const navRight = document.querySelector('#nav-right');
-const navRightLinksContainer = document.querySelector('#nav-right-links');
-
-
 const navLinks = [
     {
         name: 'Menu',
@@ -38,12 +26,33 @@ const navLinks = [
     {
         name: 'Cart',
         href: '/pages/cart',
-        icon: '<i class="fa-solid fa-basket-shopping"></i>'
+        icon: '<i class="fa-sharp fa-solid fa-cart-shopping"></i>'
     }
 ];
 
+// NAV LEFT **
+const navLeft = document.querySelector('#nav-left');
+const logoContainer = document.querySelector('#logo-container');
+const logo = document.querySelector('#company-logo');
+const navLeftLinksContainer = document.querySelector('#nav-left-links');
+
+// NAV RIGHT **
+const navRight = document.querySelector('#nav-right');
+const navRightLinksContainer = document.querySelector('#nav-right-links');
+
 const navLinksLeft = 3;
 const navLinksRight = 3;
+
+// HEADER *****
+const header = document.querySelector('header');
+const headerVideo = document.querySelector('video');
+const bannerEmail = document.querySelector('#banner-email');
+const bannerZip = document.querySelector('#banner-zip');
+
+const getHeaderHeight = () => {
+    return `${window.innerHeight - nav.clientHeight}px`;
+};
+header.style.height = getHeaderHeight();
 
 // MAIN *****
 const main = document.querySelector('main');
@@ -59,7 +68,8 @@ class Page {
     }
     createNav = () => {
         this.setNavLinksLeft(navLinksLeft);
-        this.setNavLinksRight(navLinksLeft, navLinksRight)
+        this.setNavLinksRight(navLinksLeft, navLinksRight);
+        this.setDefaultValues();
     }
     setNavLinksLeft = (total) => {
         let i = 0;
@@ -85,7 +95,10 @@ class Page {
 
             i++;
         }
-
+    }
+    setDefaultValues = () => {
+        bannerEmail.value = 'EMAIL*';
+        bannerZip.value = 'ZIP CODE'
     }
 };
 
