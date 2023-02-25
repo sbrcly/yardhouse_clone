@@ -56,6 +56,13 @@ header.style.height = getHeaderHeight();
 
 // MAIN *****
 const main = document.querySelector('main');
+const carosel = document.querySelector('#carosel');
+
+const caroselImages = [
+    'https://media.yardhouse.com/images/site/ext/home/carousel/yh-happy-hour-hpc-tablets-v012022-1024x384.jpg',
+    'https://media.yardhouse.com/images/site/ext/home/carousel/yh-hpc-catch-the-games-v1022-1903w.jpg',
+    'https://media.yardhouse.com/images/site/ext/home/carousel/yh-order-online-v2021-1024x384.jpg'
+];
 
 // FOOTER *****
 const footer = document.querySelector('footer');
@@ -65,11 +72,12 @@ const footer = document.querySelector('footer');
 class Page {
     constructor() {
         this.createNav();
+        this.setDefaultValues();
+        this.createCarosel();
     }
     createNav = () => {
         this.setNavLinksLeft(navLinksLeft);
         this.setNavLinksRight(navLinksLeft, navLinksRight);
-        this.setDefaultValues();
     }
     setNavLinksLeft = (total) => {
         let i = 0;
@@ -99,6 +107,35 @@ class Page {
     setDefaultValues = () => {
         bannerEmail.value = 'EMAIL*';
         bannerZip.value = 'ZIP CODE'
+    }
+    createCarosel = () => {
+        for (let image of caroselImages) {
+            const newLink = document.createElement('a');
+            const newImg = document.createElement('img');
+            newImg.setAttribute('src', image);
+            newImg.setAttribute('alt', 'Carosel Image');
+
+            newLink.append(newImg);
+            carosel.append(newLink);
+        };
+        this.runCarosel();
+    }
+    runCarosel = () => {
+        const caroselItems = document.querySelectorAll('#carosel a');
+        let i = 1;
+        const iterate = setInterval(() => {
+            if (i < caroselImages.length) {
+                caroselItems.forEach(item => {
+                    item.style.transform = `translateX(-${i*100}vw)`;
+                });
+            }   else {
+                i = 0
+                caroselItems.forEach(item => {
+                    item.style.transform = `translateX(-${i*100}vw)`;
+                });
+            };
+            i++
+        }, 10000);
     }
 };
 

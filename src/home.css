@@ -1,9 +1,11 @@
 nav {
-    position: relative;
+    position: fixed;
+    top: 0;
     width: 100vw;
     height: 130px;
     background-color: var(--black);
     color: var(--white);
+    z-index: 9;
 }
 
 #careers-link {
@@ -80,6 +82,7 @@ nav {
 }
 
 header {
+    margin-top: 130px;
     position: relative;
     width: 100%;
     max-height: 1000px;
@@ -284,8 +287,59 @@ main {
     margin: 2rem;
 }
 
+#section-1-right a:hover {
+    transform: scale(1.02);
+    transition: all .4s ease-out;
+}
+
+#section-1-right a:hover img {
+    box-shadow: 5px 5px 25px #00000099;
+    transition: all .5s ease-in-out;
+}
+
 #section-1-right img {
     box-shadow: 5px 5px 15px #000000aa;
+}
+
+#section-2 {
+    position: relative;
+}
+
+#carosel {
+    position: relative;
+}
+
+#carosel img {
+    width: 100vw;
+}
+
+#carosel a {
+    transition: all 1s;
+}
+
+#carosel a:hover {
+    cursor: pointer;
+}
+
+#carosel a:nth-of-type(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+}
+
+#carosel a:nth-of-type(2) {
+    position: absolute;
+    top: 0;
+    left: 100vw;
+    width: 100vw;
+}
+
+#carosel a:nth-of-type(3) {
+    position: absolute;
+    top: 0;
+    left: 200vw;
+    width: 100vw;
 }
 
 
